@@ -1,15 +1,16 @@
-{ stdenv, fetchFromGitHub, gcc, gmp, libsigsegv, openssl, automake, autoconf, ragel,
-  cmake, re2c, libtool, ncurses, perl, zlib, python2, curl }:
+{ stdenv, fetchFromGitHub, gcc, gmp, libsigsegv, openssl, automake, autoconf,
+  ragel, cmake, re2c, libtool, ncurses, perl, zlib, python2, curl }:
 
 stdenv.mkDerivation rec {
   name = "urbit-${version}";
-  version = "0.4.5";
+  version = "0.5.0";
 
   src = fetchFromGitHub {
     owner = "urbit";
     repo = "urbit";
-    rev = "v${version}";
-    sha256 = "1zgxgqbz74nsgfyrvsnjj6xxpb64mrnby7bb5qy733sy04gmzgik";
+    url = "https://github.com/urbit/urbit.git";
+    rev = "fa981e788b8a8573b82b1cb9233a60b598e55817";
+    sha256 = "0warsknpas79zshjxipklq5c3j3sns35cg1gcysm9f7r4zqs2zrk";
   };
 
   buildInputs = with stdenv.lib; [
